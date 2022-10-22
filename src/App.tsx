@@ -1,11 +1,21 @@
+import { ThemeProvider } from "styled-components"
+
+import { darkTheme } from "@/shared/styles/theme/defaultTheme"
+import { GlobalStyle } from "@/shared/styles/global"
+
+import { Background } from "@/components"
 
 
 function App() {
 
   return (
-    <div>
-      <h1>hello world</h1>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <Background>
+        <h1>hello world</h1>
+
+        <GlobalStyle />
+      </Background>
+    </ThemeProvider>
   )
 }
 
