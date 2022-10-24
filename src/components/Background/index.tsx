@@ -9,7 +9,7 @@ interface BackgroundProps {
 
 export default function Background({ children } : BackgroundProps) {
   return (
-   <BackgroundImage style={{ backgroundImage: `url(${background})`}}>
+   <BackgroundImage style={{ backgroundImage: `url(${background})`, height: '100vh'}}>
       {children}
    </BackgroundImage>
   )
