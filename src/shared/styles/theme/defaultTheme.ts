@@ -39,13 +39,12 @@ export const darkTheme = {
    },
 
    fonts: {
-      heading1: '600 3rem/120% Poppins, sans-serif',
-      heading2: '600 2.25rem/110% Poppins, sans-serif',
-      heading3: '600 2rem/120% Poppins, sans-serif',
-      heading4: '500 1.5rem/120% Poppins, sans-serif',
+      heading1: '600 2.25rem/110% Poppins, sans-serif',
+      heading2: '600 2rem/120% Poppins, sans-serif',
+      heading3: '500 1.5rem/120% Poppins, sans-serif',
       body1: '400 1.25rem/140% Poppins, sans-serif',
       body2: '400 1rem/150% Poppins, sans-serif',
       body3: '400 0.75rem/150% Poppins, sans-serif',
-      inputs: 'italic upper-case 500 1rem/120% Poppins, sans-serif'
+      inputs: 'italic 500 1rem/120% Poppins, sans-serif'
    }
 }
