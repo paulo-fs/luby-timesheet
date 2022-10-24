@@ -4,6 +4,7 @@ import { darkTheme } from "@/shared/styles/theme/defaultTheme"
 import { GlobalStyle } from "@/shared/styles/global"
 
 import { Background } from "@/components"
+import { Routes } from "@/shared/routes";
 
 
 function App() {
@@ -11,8 +12,7 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <Background>
-        <h1>hello world</h1>
-
+        <Routes />
         <GlobalStyle />
       </Background>
     </ThemeProvider>
