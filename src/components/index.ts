@@ -1,8 +1,9 @@
 import Background from "./Background"
 import PrimaryBtn from "./Buttons/Primary"
 import CustomLink from "./CustomLink"
-import Input from "./Forms/Input"
 import InputLabel from "./Forms/InputLabel"
+import LoginForm from "./Forms/LoginForm"
+import Input from "./Forms/Input"
 
 export {
    Background,
@@ -10,4 +11,5 @@ export {
    Input,
    PrimaryBtn,
    CustomLink,
+   LoginForm,
 }

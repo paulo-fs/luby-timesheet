@@ -1,0 +1,54 @@
+import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+
+import {
+   PrimaryBtn, CustomLink, Input, InputLabel
+} from "@/components";
+
+import { Form } from "./styles";
+
+const loginFormSchema = yup.object().shape({
+   email: yup.string().email('E-mail inválido').required('E-mail obrigatório'),
+   password: yup.string().required('Senha obrigatória')
+})
+
+export default function LoginForm() {
+   const { register, handleSubmit, formState } = useForm({
+      resolver: yupResolver(loginFormSchema)
+   })
+   const { errors } = formState
+   const isValid = errors.email || errors.password
+
+   const handleLogin: SubmitHandler<FieldValues> = (values) => {
+      console.log(values)
+   }
+
+  return (
+   <Form onSubmit={handleSubmit(handleLogin)}>
+      <h2>
+         timesheet
+      </h2>
+      <InputLabel type='email' error={errors.email}>
+         <Input id='email' autoFocus 
+            type='email'
+            placeholder='Meu e-mail'
+            {...register('email')}
+            error={errors.email}
+         />
+      </InputLabel>
+      <InputLabel type='password' error={errors.password}>
+         <Input id='password'
+            type='password'
+            placeholder='Minha senha'
+            {...register('password')}
+            error={errors.password}
+         />
+      </InputLabel>
+      <PrimaryBtn type='submit' disabled={isValid}>
+         Entrar
+      </PrimaryBtn>
+      <CustomLink>Esqueci minha senha</CustomLink>
+   </Form>
+  )
+}

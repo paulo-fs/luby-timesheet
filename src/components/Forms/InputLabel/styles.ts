@@ -13,4 +13,12 @@ export const LabelContainer = styled.label`
       right: 1.5rem;
       opacity: .5;
    }
+
+   .error{
+      position: absolute;
+      top: .2rem;
+      right: 1.5rem;
+      font-size: .7rem;
+      color: ${({theme}) => theme.colors.white};
+   }
 `

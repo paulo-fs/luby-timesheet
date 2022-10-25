@@ -1,12 +1,21 @@
-import { HTMLInputTypeAttribute, InputHTMLAttributes } from "react";
+import { forwardRef, ForwardRefRenderFunction, HTMLInputTypeAttribute, InputHTMLAttributes } from "react";
+import { FieldError } from "react-hook-form";
+
 import { Container } from "./styles";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement>{
    type?: HTMLInputTypeAttribute
+   error?: FieldError | null
 }
 
-export default function Input({type = 'text', ...rest} : Props) {
+const InputBase: ForwardRefRenderFunction<HTMLInputElement, Props>
+= ({type = 'text', error = null, ...rest} : Props, ref) => {
   return (
-      <Container type={type} {...rest} />
+      <Container 
+         type={type} ref={ref} {...rest} error={!!error}
+      />
   )
 }
+
+const Input = forwardRef(InputBase)
+export default Input

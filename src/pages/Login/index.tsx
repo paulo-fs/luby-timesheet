@@ -1,4 +1,4 @@
-import { CustomLink, Input, InputLabel, PrimaryBtn } from '@/components'
+import { LoginForm } from '@/components'
 
 import loginBackground from '@/shared/assets/background-login.png'
 import logo from '@/shared/assets/logo-full.svg'
@@ -6,7 +6,7 @@ import logo from '@/shared/assets/logo-full.svg'
 import { Background } from './styles'
 
 export default function LoginPage() {
-  return (
+   return (
       <Background style={{ backgroundImage: `url(${loginBackground})` }}>
          <header>
             <img src={logo} alt='logo' />
@@ -19,24 +19,7 @@ export default function LoginPage() {
                </span>
             </h1>
 
-            <form>
-               <h2>
-                  timesheet
-               </h2>
-               <InputLabel type='email'>
-                  <Input id='email' autoFocus 
-                     placeholder='Meu e-mail' 
-                  />
-               </InputLabel>
-               <InputLabel type='password'>
-                  <Input id='email' autoFocus 
-                     placeholder='Minha senha'
-                     type='password'
-                  />
-               </InputLabel>
-               <PrimaryBtn>Entrar</PrimaryBtn>
-               <CustomLink>Esqueci minha senha</CustomLink>
-            </form>
+            <LoginForm />
          </main>
       </Background>
   )

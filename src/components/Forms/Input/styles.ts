@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.input`
+interface Props {
+   error: boolean;
+}
+
+export const Container = styled.input<Props>`
    width: 100%;
    padding-block: 1rem;
    padding-inline: 1.5rem;
@@ -8,7 +12,10 @@ export const Container = styled.input`
    outline: none;
    border: none;
    border-radius: 10px;
-   background-color: ${({theme}) => theme.colors.whiteT01}; 
+   background-color: ${({theme, error}) => error
+      ? theme.colors.redT03
+      : theme.colors.whiteT01
+   }; 
    backdrop-filter: blur(40px);
    
 
@@ -21,7 +28,7 @@ export const Container = styled.input`
       color: ${({theme}) => theme.colors.whiteT03};
    }
 
-   &::focus{
-      border-color: ${({theme}) => theme.colors.whiteT03};
+   &:focus{
+      background-color: ${({theme}) => theme.colors.whiteT03};
    }
 `
