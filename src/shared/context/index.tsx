@@ -6,7 +6,7 @@ interface ProviderPropTypes {
 
 interface ContextType {
    isSigned: boolean
-   setIsSigned: React.Dispatch<React.SetStateAction<boolean>>
+   handleSignIn: () => void
 }
 
 export const Context = createContext({} as ContextType)
@@ -14,9 +14,13 @@ export const Context = createContext({} as ContextType)
 export function ContextProvider({ children } : ProviderPropTypes){
    const [isSigned, setIsSigned] = useState(false);
 
+   function handleSignIn(){
+      setIsSigned(true)
+   }
+
    return(
       <Context.Provider value={{
-         isSigned, setIsSigned
+         isSigned, handleSignIn
       }}>
          {children}
       </Context.Provider>
