@@ -1,7 +1,7 @@
 import { forwardRef, ForwardRefRenderFunction, HTMLInputTypeAttribute, InputHTMLAttributes } from "react";
 import { FieldError } from "react-hook-form";
 
-import { Container } from "./styles";
+import { Input as StyledInput } from "./styles";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement>{
    type?: HTMLInputTypeAttribute
@@ -11,7 +11,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement>{
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, Props>
 = ({type = 'text', error = null, ...rest} : Props, ref) => {
   return (
-      <Container 
+      <StyledInput 
          type={type} ref={ref} {...rest} error={!!error}
       />
   )

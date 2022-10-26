@@ -4,7 +4,7 @@ interface Props {
    error: boolean;
 }
 
-export const Container = styled.input<Props>`
+export const Input = styled.input<Props>`
    width: 100%;
    padding-block: 1rem;
    padding-inline: 1.5rem;
@@ -17,12 +17,10 @@ export const Container = styled.input<Props>`
       : theme.colors.whiteT01
    }; 
    backdrop-filter: blur(40px);
-   
 
    font-size: 1rem;
    color: ${({theme }) => theme.colors.white};
 
-   
    &::placeholder {
       font: ${({theme}) => theme.fonts.inputs};
       color: ${({theme}) => theme.colors.whiteT03};

@@ -8,17 +8,20 @@ import {
 
 import { Form } from "./styles";
 
+
 const loginFormSchema = yup.object().shape({
    email: yup.string().email('E-mail inválido').required('E-mail obrigatório'),
    password: yup.string().required('Senha obrigatória')
 })
 
 export default function LoginForm() {
-   const { register, handleSubmit, formState } = useForm({
+   const { register, handleSubmit, formState, trigger, watch  } = useForm({
       resolver: yupResolver(loginFormSchema)
    })
    const { errors } = formState
-   const isValid = errors.email || errors.password
+   const watchedFields = watch(['email', 'password'])
+   const isNotValid = !!(errors.email || errors.password 
+      || !(watchedFields[0] && watchedFields[1]))
 
    const handleLogin: SubmitHandler<FieldValues> = (values) => {
       console.log(values)
@@ -35,6 +38,7 @@ export default function LoginForm() {
             placeholder='Meu e-mail'
             {...register('email')}
             error={errors.email}
+            onBlur={async() => await trigger('email')}
          />
       </InputLabel>
       <InputLabel type='password' error={errors.password}>
@@ -43,9 +47,10 @@ export default function LoginForm() {
             placeholder='Minha senha'
             {...register('password')}
             error={errors.password}
+            onBlur={async() => await trigger('password')}
          />
       </InputLabel>
-      <PrimaryBtn type='submit' disabled={isValid}>
+      <PrimaryBtn type='submit' disabled={isNotValid}>
          Entrar
       </PrimaryBtn>
       <CustomLink>Esqueci minha senha</CustomLink>
