@@ -5,17 +5,20 @@ import { GlobalStyle } from "@/shared/styles/global"
 
 import { Background } from "@/components"
 import { Routes } from "@/shared/routes";
+import { ContextProvider } from "./shared/context";
 
 
 function App() {
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Background>
-        <Routes />
-        <GlobalStyle />
-      </Background>
-    </ThemeProvider>
+    <ContextProvider>
+      <ThemeProvider theme={darkTheme}>
+        <Background>
+          <Routes />
+          <GlobalStyle />
+        </Background>
+      </ThemeProvider>
+    </ContextProvider>
   )
 }
 
