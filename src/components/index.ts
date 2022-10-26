@@ -4,6 +4,7 @@ import CustomLink from "./CustomLink"
 import InputLabel from "./Forms/InputLabel"
 import LoginForm from "./Forms/LoginForm"
 import {Input} from "./Forms/Input/styles"
+import Layout from "./Layout"
 
 export {
    Background,
@@ -12,4 +13,5 @@ export {
    PrimaryBtn,
    CustomLink,
    LoginForm,
+   Layout,
 }

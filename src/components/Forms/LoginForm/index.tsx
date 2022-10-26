@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom'
+import { Context } from '@/shared/context';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -8,13 +11,14 @@ import {
 
 import { Form } from "./styles";
 
-
 const loginFormSchema = yup.object().shape({
    email: yup.string().email('E-mail inválido').required('E-mail obrigatório'),
    password: yup.string().required('Senha obrigatória')
 })
 
 export default function LoginForm() {
+   const {handleSignIn} = useContext(Context)
+   const navigate = useNavigate()
    const { register, handleSubmit, formState, trigger, watch  } = useForm({
       resolver: yupResolver(loginFormSchema)
    })
@@ -24,6 +28,8 @@ export default function LoginForm() {
       || !(watchedFields[0] && watchedFields[1]))
 
    const handleLogin: SubmitHandler<FieldValues> = (values) => {
+      handleSignIn()
+      navigate('/signed/notation')
       console.log(values)
    }
 
