@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint \"./{src,cypress}/**/*.{js,jsx,ts,tsx,json}\"",
+    "format:cypress": "prettier --write \"./cypress/**/*.{js,ts,json}\"",
+    "test": "cypress run --headed --config-file \"./cypress/config/cypress.config.ts\""
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
