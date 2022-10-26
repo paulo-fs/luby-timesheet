@@ -30,7 +30,7 @@ export default function InputLabel
       {children}
       <img src={iconSelector[type]} alt='mailInput' />
       { !!error &&
-        <div className='error'>{ error.message }</div>
+        <div className='error' data-cy={`error-${type}`}>{ error.message }</div>
       }
     </LabelContainer>
   )

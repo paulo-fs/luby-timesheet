@@ -56,7 +56,7 @@ export default function LoginForm() {
             onBlur={async() => await trigger('password')}
          />
       </InputLabel>
-      <PrimaryBtn type='submit' disabled={isNotValid}>
+      <PrimaryBtn type='submit' disabled={isNotValid} data-cy='signin'>
          Entrar
       </PrimaryBtn>
       <CustomLink>Esqueci minha senha</CustomLink>
