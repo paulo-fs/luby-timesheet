@@ -1,10 +1,24 @@
+import { useContext } from 'react'
+import {Routes, Route, Navigate, } from 'react-router-dom'
+import { Context } from '../context'
+
 import { LoginPage } from '@/pages'
-import {Routes, Route, } from 'react-router-dom'
 
 export default function NotSignedRoutes() {
+  const {isSigned} = useContext(Context)
+
+  function NotFound(){
+    return isSigned
+      ? <Navigate to='/' replace />
+      : <Navigate to='/login' replace />
+  }
+
+  console.log('isSigned', isSigned)
+
   return (
     <Routes>
-      <Route path='/' element={<LoginPage />} />
+      <Route path='/login' element={<LoginPage />} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   )
 }

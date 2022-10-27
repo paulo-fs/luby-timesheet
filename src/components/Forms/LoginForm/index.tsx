@@ -29,7 +29,7 @@ export default function LoginForm() {
 
    const handleLogin: SubmitHandler<FieldValues> = (values) => {
       handleSignIn()
-      navigate('/signed/notation')
+      navigate('/')
       console.log(values)
    }
 

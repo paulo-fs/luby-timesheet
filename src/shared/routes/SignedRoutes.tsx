@@ -1,13 +1,27 @@
+import {Routes, Route, Navigate } from 'react-router-dom'
+
 import { Layout } from '@/components'
 import { Notation } from '@/pages'
-import {Routes, Route, } from 'react-router-dom'
+import { useContext } from 'react'
+import { Context } from '../context'
 
 export default function SignedRoutes() {
+  const {isSigned} = useContext(Context)
+
+  function NotFound(){
+    return isSigned
+      ? <Navigate to='/' />
+      : <Navigate to='/login' />
+  }
+
+  console.log('isSigned', isSigned)
+
   return (
     <Routes>
-      <Route path='/signed' element={<Layout />}>
-        <Route path='/signed/notation' element={<Notation />} />
+      <Route path='/' element={<Layout />}>
+        <Route path='/' element={<Notation />} />
       </Route>
+      <Route path='*' element={<NotFound />} />
     </Routes>
   )
 }

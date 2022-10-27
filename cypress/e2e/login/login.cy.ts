@@ -1,6 +1,6 @@
 describe('Login', () => {
    beforeEach(() => {
-      cy.visit('/')
+      cy.visit('/login')
    })
 
    it('should register button be disabled on page render', () => {
