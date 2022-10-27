@@ -5,6 +5,7 @@ import InputLabel from "./Forms/InputLabel"
 import LoginForm from "./Forms/LoginForm"
 import {Input} from "./Forms/Input/styles"
 import Layout from "./Layout"
+import Header from "./Header"
 
 export {
    Background,
@@ -14,4 +15,5 @@ export {
    CustomLink,
    LoginForm,
    Layout,
+   Header,
 }

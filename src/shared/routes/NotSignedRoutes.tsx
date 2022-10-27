@@ -13,8 +13,6 @@ export default function NotSignedRoutes() {
       : <Navigate to='/login' replace />
   }
 
-  console.log('isSigned', isSigned)
-
   return (
     <Routes>
       <Route path='/login' element={<LoginPage />} />

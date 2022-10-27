@@ -12,7 +12,7 @@ interface ContextType {
 export const Context = createContext({} as ContextType)
 
 export function ContextProvider({ children } : ProviderPropTypes){
-   const [isSigned, setIsSigned] = useState(false);
+   const [isSigned, setIsSigned] = useState(true);
 
    function handleSignIn(){
       setIsSigned(true)

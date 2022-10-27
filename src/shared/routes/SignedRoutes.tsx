@@ -14,8 +14,6 @@ export default function SignedRoutes() {
       : <Navigate to='/login' />
   }
 
-  console.log('isSigned', isSigned)
-
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
