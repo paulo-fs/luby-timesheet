@@ -9,6 +9,7 @@ export const HeaderContainer = styled.header`
 
    .content{
       width: 100%;
+      max-width: 1440px;
       height: 100%;
       margin: 0 auto;
       padding-inline: 7.8rem;

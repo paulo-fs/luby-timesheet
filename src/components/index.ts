@@ -6,14 +6,16 @@ import LoginForm from "./Forms/LoginForm"
 import {Input} from "./Forms/Input/styles"
 import Layout from "./Layout"
 import Header from "./Header"
+import Select from "./Forms/Select"
 
 export {
    Background,
-   InputLabel,
-   Input,
-   PrimaryBtn,
-   CustomLink,
-   LoginForm,
    Layout,
    Header,
+   LoginForm,
+   InputLabel,
+   Input,
+   Select,
+   PrimaryBtn,
+   CustomLink,
 }
