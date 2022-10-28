@@ -10,13 +10,49 @@ export const Container = styled.div`
    .fields{
       width: clamp(20rem, 100%, 32rem);
       height: 100%;
+      color: ${({theme}) => theme.colors.white};
+
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
 
       [data-headlessui-state="open"] {
          position: relative;
-         z-index: 10;
+         z-index: 2;
       }
 
-      background-color: ${({theme}) => theme.colors.whiteT01};
+      .flex-column{
+         display: flex;
+         flex-direction: column;
+         gap: .5rem;
+      }
+
+      .margin-bottom{
+         margin-bottom: .5rem;
+         margin-top: .2rem;
+      }
+
+      .time{
+         display: flex;
+         gap: 1rem;
+      }
+
+      .counting-time{
+         div{
+            display: flex;
+            justify-content: space-between;
+         }
+      }
+
+      .checkbox{
+         input{
+            margin-right: 1rem;
+         }
+      }
+
+      .btn{
+         margin-top: auto;
+      }
    }
 
    .notation-text{

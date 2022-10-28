@@ -1,5 +1,5 @@
-import { useState, Fragment } from 'react'
-import { Combobox, Transition } from '@headlessui/react'
+import { useState } from 'react'
+import { Combobox } from '@headlessui/react'
 
 import arrowUp from '@/shared/assets/icons/ArrowUp2.svg'
 import arrowDown from '@/shared/assets/icons/ArrowDown2.svg'
@@ -11,12 +11,6 @@ const clients = [
    { id: 3, name: 'Multi' },
    { id: 4, name: 'Banco X' },
  ]
-
-
- //   estilizando o select, colocar uma div ao redor do 'li'
- //   pra fazer o efeito de hover
- //   problema com sobreposição da lista
-
 
 export default function Select() {
    const [selectedClient, setSelectedClient] = useState(clients[0])

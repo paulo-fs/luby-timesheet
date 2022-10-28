@@ -4,8 +4,8 @@ import { Combobox } from '@headlessui/react'
 export const StyledCombobox = styled.div`
    width: 100%;
    height: 3.5rem;
+   
    border-radius: 10px;
-
    backdrop-filter: blur(40px);
    background-color: ${({theme}) => theme.colors.whiteT01};
 
@@ -47,9 +47,9 @@ export const SelectLabel = styled(Combobox.Label)`
 export const StyledList = styled(Combobox.Options)`
    list-style: none;
    margin-top: .3rem;
-   color: ${({theme}) => theme.colors.white};
+   color: ${({theme}) => theme.colors.darkBlueT08};
    
-   background-color: ${({theme}) => theme.colors.whiteT01};
+   background-color: ${({theme}) => theme.colors.white};
    backdrop-filter: blur(70px);
    border-radius: 10px;
    
@@ -60,14 +60,16 @@ export const StyledList = styled(Combobox.Options)`
       transition: .2s;
       &:hover{
          background-color: ${({theme}) => theme.colors.greenT01};
+         color: ${({theme}) => theme.colors.darkBlue};
 
          &::before{
             content: '';
-            width: 4px;
+            width: 6px;
             height: 100%;
             position: absolute;
             left: 0;
             top: 0;
+            border-radius: 60px 0 0 60px;
             background-color: ${({theme}) => theme.colors.green};
          }
       }
