@@ -17,6 +17,8 @@ export default function Notation() {
     <Container>
       <div className="fields">
         <Select />
+        <br />
+        <Select />
       </div>
       <div className="notation-text"></div>
     </Container>

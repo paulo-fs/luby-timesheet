@@ -47,13 +47,29 @@ export const SelectLabel = styled(Combobox.Label)`
 export const StyledList = styled(Combobox.Options)`
    list-style: none;
    margin-top: .3rem;
-   padding: .5rem 1.5rem;
    color: ${({theme}) => theme.colors.white};
-
+   
    background-color: ${({theme}) => theme.colors.whiteT01};
+   backdrop-filter: blur(70px);
    border-radius: 10px;
+   
+   li{
+      padding: .8rem 1.5rem;
+      position: relative;
 
-   display: flex;
-   flex-direction: column;
-   gap: .3rem;
+      transition: .2s;
+      &:hover{
+         background-color: ${({theme}) => theme.colors.greenT01};
+
+         &::before{
+            content: '';
+            width: 4px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: ${({theme}) => theme.colors.green};
+         }
+      }
+   }
 `

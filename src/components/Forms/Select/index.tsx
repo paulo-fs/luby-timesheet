@@ -12,9 +12,15 @@ const clients = [
    { id: 4, name: 'Banco X' },
  ]
 
+
+ //   estilizando o select, colocar uma div ao redor do 'li'
+ //   pra fazer o efeito de hover
+ //   problema com sobreposição da lista
+
+
 export default function Select() {
    const [selectedClient, setSelectedClient] = useState(clients[0])
-  const [query, setQuery] = useState('')
+   const [query, setQuery] = useState('')
 
   const filteredClients = query === ''
     ? clients
@@ -24,35 +30,33 @@ export default function Select() {
     ))
 
   return (
-   <Combobox as={StyledCombobox} value={selectedClient} onChange={setSelectedClient}>
-      <SelectLabel>
-         <Combobox.Input 
-            displayValue={(client: typeof clients[0]) => client.name} 
-            onChange={event => setQuery(event.target.value)} 
-         />
-         <Combobox.Button>
-            <img src={arrowDown} alt="selecione um cliente" />
-         </Combobox.Button>
-      </SelectLabel>
-      <Transition
-      as={Fragment} leave='transition ease-in duration-100'
-      leaveFrom='opacity-100' leaveTo='opacity-0'
-      afterLeave={() => setQuery('')}
-      >
-      <StyledList>
-         {
-         filteredClients.length === 0 && query !== '' 
-         ? ( <div>nothing fould</div> ) 
-         : ( 
-            filteredClients.map(client => (
-               <Combobox.Option key={client.id} value={client}>
-                  <span>{client.name}</span>
-               </Combobox.Option>
-            ))
-            )
-      }
-      </StyledList>
-      </Transition>
+   <Combobox as={StyledCombobox} open value={selectedClient} onChange={setSelectedClient}>
+		{({ open }) => (
+			<>
+				<SelectLabel>
+					<Combobox.Input 
+						displayValue={(client: typeof clients[0]) => client.name} 
+						onChange={event => setQuery(event.target.value)} 
+					/>
+					<Combobox.Button>
+						<img src={open ? arrowUp : arrowDown} alt="selecione um cliente" />
+					</Combobox.Button>
+				</SelectLabel>
+				<StyledList>
+					{
+					filteredClients.length === 0 && query !== '' 
+					? ( <span>nothing fould</span> ) 
+					: ( 
+						filteredClients.map(client => (
+							<Combobox.Option key={client.id} value={client}>
+								<span>{client.name}</span>
+							</Combobox.Option>
+						))
+						)
+				}
+				</StyledList>
+			</>
+		)}
    </Combobox>
   )
 }
