@@ -1,18 +1,24 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 
-import background from '@/shared/assets/background.png'
-import { BackgroundImage } from './styles'
+import background from '@/shared/assets/background.png';
+import { BackgroundImage } from './styles';
 
 interface BackgroundProps {
-   children: ReactNode
+  children: ReactNode;
 }
 
-export default function Background({ children } : BackgroundProps) {
+export default function Background({ children }: BackgroundProps) {
   return (
-   <BackgroundImage style={{ 
-      backgroundImage: `url(${background})`, height: 'auto', backgroundAttachment: 'fixed'
-   }}>
+    <BackgroundImage
+      style={{
+        backgroundImage: `url(${background})`,
+        height: 'auto',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
+    >
       {children}
-   </BackgroundImage>
-  )
+    </BackgroundImage>
+  );
 }
