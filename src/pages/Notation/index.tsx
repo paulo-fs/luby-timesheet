@@ -1,4 +1,4 @@
-import { Input, PrimaryBtn, Select } from '@/components';
+import { Input, InputLabel, PrimaryBtn, Select } from '@/components';
 import { useState, Fragment } from 'react';
 
 import { Container } from './styles';
@@ -27,11 +27,11 @@ export default function Notation() {
           <div className="time">
             <div className="time-start-end">
               <p className="margin-bottom">Hora inicial</p>
-              <Input />
+              <Input type="time" />
             </div>
             <div className="time-start-end">
               <p className="margin-bottom">Hora final</p>
-              <Input />
+              <Input type="time" />
             </div>
           </div>
         </div>
@@ -54,7 +54,17 @@ export default function Notation() {
 
         <PrimaryBtn className="btn">Salvar apontamento</PrimaryBtn>
       </div>
-      <div className="notation-text"></div>
+
+      <div className="notation-text">
+        <div className="github">
+          <InputLabel type="search">
+            <Input type="search" placeholder="Buque um repositório" />
+          </InputLabel>
+          <Select />
+          <PrimaryBtn>Add</PrimaryBtn>
+        </div>
+        <textarea />
+      </div>
     </Container>
   );
 }

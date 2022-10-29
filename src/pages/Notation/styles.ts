@@ -35,6 +35,10 @@ export const Container = styled.div`
       .time{
          display: flex;
          gap: 1rem;
+
+         div{
+            width: 100%;
+         }
       }
 
       .counting-time{
@@ -59,6 +63,31 @@ export const Container = styled.div`
       width: 100%;
       height: 100%;
 
-      background-color: ${({theme}) => theme.colors.whiteT01};
+      div + textarea{
+         margin-top: 1.5rem;
+      }
+
+      .github{
+         display: flex;
+         align-items: flex-start;
+         gap: 1rem;
+
+         button{
+            margin-left: auto;
+         }
+      }
+
+      textarea{
+         background-color: ${({theme}) => theme.colors.whiteT01};
+         width: 100%;
+         height: 90%;
+         padding: 2rem;
+         border: none;
+         outline: none;
+         border-radius: 10px;
+
+         color: ${({theme}) => theme.colors.white};
+         font: ${({theme}) => theme.fonts.body2};
+      }
    }
 `
