@@ -18,7 +18,7 @@ export const StyledCombobox = styled.div`
 export const SelectLabel = styled(Combobox.Label)`
    width: 100%;
    height: 100%;
-   padding-inline: 1.5rem; 
+   padding-inline: 1.5rem;
 
    display: flex;
    align-items: center;
@@ -48,11 +48,11 @@ export const StyledList = styled(Combobox.Options)`
    list-style: none;
    margin-top: .3rem;
    color: ${({theme}) => theme.colors.white};
-   
+
    background-color: ${({theme}) => theme.colors.whiteT01};
    backdrop-filter: blur(70px);
    border-radius: 10px;
-   
+
    li{
       padding: .8rem 1.5rem;
       position: relative;

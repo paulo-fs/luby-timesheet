@@ -34,9 +34,9 @@ export default function Select() {
 		{({ open }) => (
 			<>
 				<SelectLabel>
-					<Combobox.Input 
-						displayValue={(client: typeof clients[0]) => client.name} 
-						onChange={event => setQuery(event.target.value)} 
+					<Combobox.Input
+						displayValue={(client: typeof clients[0]) => client.name}
+						onChange={event => setQuery(event.target.value)}
 					/>
 					<Combobox.Button>
 						<img src={open ? arrowUp : arrowDown} alt="selecione um cliente" />
@@ -44,9 +44,9 @@ export default function Select() {
 				</SelectLabel>
 				<StyledList>
 					{
-					filteredClients.length === 0 && query !== '' 
-					? ( <span>nothing fould</span> ) 
-					: ( 
+					filteredClients.length === 0 && query !== ''
+					? ( <span>nothing fould</span> )
+					: (
 						filteredClients.map(client => (
 							<Combobox.Option key={client.id} value={client}>
 								<span>{client.name}</span>
