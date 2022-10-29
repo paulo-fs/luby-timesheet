@@ -16,7 +16,7 @@ export const Input = styled.input<Props>`
       ? theme.colors.redT03
       : theme.colors.whiteT01
    };
-   backdrop-filter: blur(40px);
+   // backdrop-filter: blur(40px);
 
    font-size: 1rem;
    color: ${({theme }) => theme.colors.white};

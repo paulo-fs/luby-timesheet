@@ -6,7 +6,6 @@ export const StyledCombobox = styled.div`
    height: 3.5rem;
    border-radius: 10px;
 
-   backdrop-filter: blur(40px);
    background-color: ${({theme}) => theme.colors.whiteT01};
 
    transition: .2s;
@@ -45,6 +44,10 @@ export const SelectLabel = styled(Combobox.Label)`
 `
 
 export const StyledList = styled(Combobox.Options)`
+   position: relative;
+   z-index: 1;
+   width: 100%;
+
    list-style: none;
    margin-top: .3rem;
    color: ${({theme}) => theme.colors.white};
@@ -55,7 +58,6 @@ export const StyledList = styled(Combobox.Options)`
 
    li{
       padding: .8rem 1.5rem;
-      position: relative;
 
       transition: .2s;
       &:hover{

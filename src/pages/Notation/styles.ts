@@ -10,12 +10,6 @@ export const Container = styled.div`
    .fields{
       width: clamp(20rem, 100%, 32rem);
       height: 100%;
-
-      [data-headlessui-state="open"] {
-         position: relative;
-         z-index: 10;
-      }
-
       background-color: ${({theme}) => theme.colors.whiteT01};
    }
 
