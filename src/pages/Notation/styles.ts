@@ -10,6 +10,7 @@ export const Container = styled.div`
    .fields{
       width: clamp(20rem, 100%, 32rem);
       height: 100%;
+      background-color: ${({theme}) => theme.colors.whiteT01};
       color: ${({theme}) => theme.colors.white};
 
       display: flex;

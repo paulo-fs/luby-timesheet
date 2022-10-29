@@ -18,7 +18,7 @@ export const StyledCombobox = styled.div`
 export const SelectLabel = styled(Combobox.Label)`
    width: 100%;
    height: 100%;
-   padding-inline: 1.5rem; 
+   padding-inline: 1.5rem;
 
    display: flex;
    align-items: center;
@@ -45,17 +45,22 @@ export const SelectLabel = styled(Combobox.Label)`
 `
 
 export const StyledList = styled(Combobox.Options)`
+   position: relative;
+   z-index: 1;
+   width: 100%;
+
    list-style: none;
    margin-top: .3rem;
+
+   color: ${({theme}) => theme.colors.white};
+   background-color: ${({theme}) => theme.colors.whiteT01};
    color: ${({theme}) => theme.colors.darkBlueT08};
-   
    background-color: ${({theme}) => theme.colors.white};
    backdrop-filter: blur(70px);
    border-radius: 10px;
-   
+
    li{
       padding: .8rem 1.5rem;
-      position: relative;
 
       transition: .2s;
       &:hover{

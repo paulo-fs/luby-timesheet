@@ -8,15 +8,15 @@ export const Input = styled.input<Props>`
    width: 100%;
    padding-block: 1rem;
    padding-inline: 1.5rem;
-   
+
    outline: none;
    border: none;
    border-radius: 10px;
    background-color: ${({theme, error}) => error
       ? theme.colors.redT03
       : theme.colors.whiteT01
-   }; 
-   backdrop-filter: blur(40px);
+   };
+   // backdrop-filter: blur(40px);
 
    font-size: 1rem;
    color: ${({theme }) => theme.colors.white};
