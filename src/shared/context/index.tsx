@@ -1,28 +1,31 @@
-import { createContext, useState } from 'react'
+import { createContext, useState } from 'react';
 
 interface ProviderPropTypes {
-   children: React.ReactNode
+  children: React.ReactNode;
 }
 
 interface ContextType {
-   isSigned: boolean
-   handleSignIn: () => void
+  isSigned: boolean;
+  handleSignIn: () => void;
 }
 
-export const Context = createContext({} as ContextType)
+export const Context = createContext({} as ContextType);
 
-export function ContextProvider({ children } : ProviderPropTypes){
-   const [isSigned, setIsSigned] = useState(true);
+export function ContextProvider({ children }: ProviderPropTypes) {
+  const [isSigned, setIsSigned] = useState(true);
 
-   function handleSignIn(){
-      setIsSigned(true)
-   }
+  function handleSignIn() {
+    setIsSigned(true);
+  }
 
-   return(
-      <Context.Provider value={{
-         isSigned, handleSignIn
-      }}>
-         {children}
-      </Context.Provider>
-   )
+  return (
+    <Context.Provider
+      value={{
+        isSigned,
+        handleSignIn,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
 }

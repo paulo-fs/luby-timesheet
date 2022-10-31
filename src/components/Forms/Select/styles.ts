@@ -2,11 +2,9 @@ import styled from 'styled-components'
 import { Combobox } from '@headlessui/react'
 
 export const StyledCombobox = styled.div`
-   width: 100%;
    height: 3.5rem;
    
    border-radius: 10px;
-   backdrop-filter: blur(40px);
    background-color: ${({theme}) => theme.colors.whiteT01};
 
    transition: .2s;
@@ -16,7 +14,6 @@ export const StyledCombobox = styled.div`
 `
 
 export const SelectLabel = styled(Combobox.Label)`
-   width: 100%;
    height: 100%;
    padding-inline: 1.5rem; 
 
@@ -47,10 +44,10 @@ export const SelectLabel = styled(Combobox.Label)`
 export const StyledList = styled(Combobox.Options)`
    list-style: none;
    margin-top: .3rem;
-   color: ${({theme}) => theme.colors.darkBlueT08};
+   color: ${({theme}) => theme.colors.whiteT06};
    
-   background-color: ${({theme}) => theme.colors.white};
-   backdrop-filter: blur(70px);
+   background-color: ${({theme}) => theme.colors.whiteT01};
+   backdrop-filter: blur(40px);
    border-radius: 10px;
    
    li{
@@ -60,7 +57,7 @@ export const StyledList = styled(Combobox.Options)`
       transition: .2s;
       &:hover{
          background-color: ${({theme}) => theme.colors.greenT01};
-         color: ${({theme}) => theme.colors.darkBlue};
+         color: ${({theme}) => theme.colors.white};
 
          &::before{
             content: '';

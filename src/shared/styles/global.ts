@@ -26,6 +26,11 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: none;
    }
 
+   [data-headlessui-state="open"] {
+         position: relative;
+         z-index: 2;
+      }
+
    @media (max-width: 768px) {
       :root {
          font-size: 14px;
