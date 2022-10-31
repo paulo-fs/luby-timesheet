@@ -8,6 +8,7 @@ import Layout from "./Layout"
 import Header from "./Header"
 import Select from "./Forms/Select"
 import MakeNotation from "./Forms/MakeNotation"
+import Chips from "./Chips"
 
 export {
    Background,
@@ -20,4 +21,5 @@ export {
    Select,
    PrimaryBtn,
    CustomLink,
+   Chips,
 }
