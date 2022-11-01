@@ -1,14 +1,10 @@
-import { LinkContainer } from "./styles";
+import { LinkContainer } from './styles';
 
-interface CustomLinkProps{
-   children: string
+interface CustomLinkProps {
+  children: string;
+  goTo?: string;
 }
 
-export default function CustomLink
-({ children } : CustomLinkProps) {
-  return (
-    <LinkContainer>
-      { children }
-    </LinkContainer>
-  )
+export default function CustomLink({ children, goTo = '/' }: CustomLinkProps) {
+  return <LinkContainer to={goTo}>{children}</LinkContainer>;
 }

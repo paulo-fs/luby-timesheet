@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const LinkContainer = styled.a`
+export const LinkContainer = styled(Link)`
    width: fit-content;
    font: ${({theme}) => theme.fonts.inputs};
    color: ${({theme}) => theme.colors.white};
