@@ -7,7 +7,6 @@ import NotSignedRoutes from './NotSignedRoutes';
 import SignedRoutes from './SignedRoutes';
 
 export function Routes() {
-  // const {isSigned} = useContext(Context)
   const isSigned = useSelector<RootState>((state) => state.authSlice.isSigned);
 
   return (
