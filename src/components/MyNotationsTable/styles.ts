@@ -15,7 +15,7 @@ export const Table = styled.table`
       th{
          text-align: left;
          color: ${({theme}) => theme.colors.darkBlue};
-         padding: .7rem 1rem;
+         padding: 1rem;
       }
       
       th:first-child{
@@ -68,16 +68,6 @@ export const TableFooter = styled.div`
       padding: .5rem;
       font: ${({theme}) => theme.fonts.body2};
       color: ${({theme}) => theme.colors.darkBlue};
-   }
-`
-
-export const RowInfos = styled.tr`
-   width: 100%;
-   background-color: ${({theme}) => theme.colors.whiteT01};
-
-   button{
-      width: 100%;
-      margin-top: 2rem;
    }
 `
 
