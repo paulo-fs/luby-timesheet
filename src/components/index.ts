@@ -10,6 +10,7 @@ import Select from "./Forms/Select"
 import MakeNotation from "./Forms/MakeNotation"
 import Chips from "./Chips"
 import MyNotationsTable from "./MyNotationsTable"
+import SecondaryBtn from "./Buttons/Secondary"
 
 export {
    Background,
@@ -22,6 +23,7 @@ export {
    Input,
    Select,
    PrimaryBtn,
+   SecondaryBtn,
    CustomLink,
    Chips,
 }
