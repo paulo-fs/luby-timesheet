@@ -1,12 +1,13 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+import { useSelector } from 'react-redux';
+import { RootState } from '@/shared/store/store';
+
 import { Layout } from '@/components';
 import { Notation, EvaluateNotations, MyNotations } from '@/pages';
-import { useContext } from 'react';
-import { Context } from '../context';
 
 export default function SignedRoutes() {
-  const { isSigned } = useContext(Context);
+  const isSigned = useSelector<RootState>((state) => state.authSlice.isSigned);
 
   function NotFound() {
     return isSigned ? <Navigate to="/" /> : <Navigate to="/login" />;

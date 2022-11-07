@@ -1,19 +1,18 @@
-import { useContext } from 'react';
-import { Context } from '../context';
-import {BrowserRouter} from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
-import NotSignedRoutes from "./NotSignedRoutes";
-import SignedRoutes from "./SignedRoutes";
+import { BrowserRouter } from 'react-router-dom';
+
+import NotSignedRoutes from './NotSignedRoutes';
+import SignedRoutes from './SignedRoutes';
 
 export function Routes() {
-  const {isSigned} = useContext(Context)
+  // const {isSigned} = useContext(Context)
+  const isSigned = useSelector<RootState>((state) => state.authSlice.isSigned);
 
   return (
     <BrowserRouter>
-      {isSigned
-          ? <SignedRoutes />
-          : <NotSignedRoutes />
-      }
+      {isSigned ? <SignedRoutes /> : <NotSignedRoutes />}
     </BrowserRouter>
-  )
+  );
 }

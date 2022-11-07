@@ -1,25 +1,24 @@
-import { ThemeProvider } from "styled-components"
+import { Provider } from 'react-redux';
+import store from '@/shared/store/store';
 
-import { darkTheme } from "@/shared/styles/theme/defaultTheme"
-import { GlobalStyle } from "@/shared/styles/global"
+import { ThemeProvider } from 'styled-components';
+import { darkTheme } from '@/shared/styles/theme/defaultTheme';
+import { GlobalStyle } from '@/shared/styles/global';
 
-import { Background } from "@/components"
-import { Routes } from "@/shared/routes";
-import { ContextProvider } from "./shared/context";
-
+import { Background } from '@/components';
+import { Routes } from '@/shared/routes';
 
 function App() {
-
   return (
-    <ContextProvider>
+    <Provider store={store}>
       <ThemeProvider theme={darkTheme}>
         <Background>
           <Routes />
           <GlobalStyle />
         </Background>
       </ThemeProvider>
-    </ContextProvider>
-  )
+    </Provider>
+  );
 }
 
-export default App
+export default App;
